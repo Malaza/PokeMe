@@ -9,13 +9,36 @@
 /* Begin PBXBuildFile section */
 		59FDE2DB2AAC39CC00A132CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2DA2AAC39CC00A132CA /* AppDelegate.swift */; };
 		59FDE2DD2AAC39CC00A132CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2DC2AAC39CC00A132CA /* SceneDelegate.swift */; };
-		59FDE2DF2AAC39CC00A132CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2DE2AAC39CC00A132CA /* ViewController.swift */; };
 		59FDE2E22AAC39CC00A132CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FDE2E02AAC39CC00A132CA /* Main.storyboard */; };
 		59FDE2E42AAC39CF00A132CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FDE2E32AAC39CF00A132CA /* Assets.xcassets */; };
 		59FDE2E72AAC39CF00A132CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FDE2E52AAC39CF00A132CA /* LaunchScreen.storyboard */; };
 		59FDE2F22AAC39CF00A132CA /* PokeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2F12AAC39CF00A132CA /* PokeMeTests.swift */; };
 		59FDE2FC2AAC39CF00A132CA /* PokeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2FB2AAC39CF00A132CA /* PokeMeUITests.swift */; };
 		59FDE2FE2AAC39CF00A132CA /* PokeMeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2FD2AAC39CF00A132CA /* PokeMeUITestsLaunchTests.swift */; };
+		59FDE3112AACA4D700A132CA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3102AACA4D700A132CA /* Service.swift */; };
+		59FDE3132AACA4EA00A132CA /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3122AACA4EA00A132CA /* ServiceProtocol.swift */; };
+		59FDE3162AACA5D100A132CA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59FDE3152AACA5D100A132CA /* Alamofire */; };
+		59FDE3192AACA63100A132CA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 59FDE3182AACA63100A132CA /* Lottie */; };
+		59FDE31B2AACA66200A132CA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE31A2AACA66200A132CA /* UIColor.swift */; };
+		59FDE31D2AACA67000A132CA /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE31C2AACA67000A132CA /* UIViewController.swift */; };
+		59FDE32B2AAD875400A132CA /* PokeListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE32A2AAD875400A132CA /* PokeListRouterProtocol.swift */; };
+		59FDE32D2AAD876000A132CA /* PokeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE32C2AAD876000A132CA /* PokeListRouter.swift */; };
+		59FDE32F2AAD879200A132CA /* PokeListPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE32E2AAD879200A132CA /* PokeListPresenterProtocol.swift */; };
+		59FDE3312AAD87A600A132CA /* PokeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3302AAD87A600A132CA /* PokeListPresenter.swift */; };
+		59FDE3332AAD87BD00A132CA /* PokeListInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3322AAD87BD00A132CA /* PokeListInteractorProtocol.swift */; };
+		59FDE3352AAD87D000A132CA /* PokeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3342AAD87D000A132CA /* PokeListInteractor.swift */; };
+		59FDE3382AAD87EA00A132CA /* PokeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3362AAD87EA00A132CA /* PokeListViewController.swift */; };
+		59FDE3392AAD87EA00A132CA /* PokeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FDE3372AAD87EA00A132CA /* PokeListViewController.xib */; };
+		59FDE33C2AAD892C00A132CA /* PokeDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE33A2AAD892C00A132CA /* PokeDescriptionViewController.swift */; };
+		59FDE33D2AAD892C00A132CA /* PokeDescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FDE33B2AAD892C00A132CA /* PokeDescriptionViewController.xib */; };
+		59FDE3412AAD8BCD00A132CA /* PokeDescriptionInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3402AAD8BCD00A132CA /* PokeDescriptionInteractorProtocol.swift */; };
+		59FDE3432AAD8BE400A132CA /* PokeDescriptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3422AAD8BE300A132CA /* PokeDescriptionInteractor.swift */; };
+		59FDE3452AAD8BF800A132CA /* PokeDescriptionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3442AAD8BF800A132CA /* PokeDescriptionPresenterProtocol.swift */; };
+		59FDE3472AAD8C0800A132CA /* PokeDescriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3462AAD8C0800A132CA /* PokeDescriptionPresenter.swift */; };
+		59FDE3492AAD8C2700A132CA /* PokeDescriptionRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3482AAD8C2700A132CA /* PokeDescriptionRouterProtocol.swift */; };
+		59FDE34B2AAD8C3B00A132CA /* PokeDescriptionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE34A2AAD8C3B00A132CA /* PokeDescriptionRouter.swift */; };
+		59FDE34D2AADCFA900A132CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE34C2AADCFA900A132CA /* Constants.swift */; };
+		59FDE3522AADD42E00A132CA /* PokeListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3512AADD42E00A132CA /* PokeListRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +62,6 @@
 		59FDE2D72AAC39CC00A132CA /* PokeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FDE2DA2AAC39CC00A132CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59FDE2DC2AAC39CC00A132CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		59FDE2DE2AAC39CC00A132CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		59FDE2E12AAC39CC00A132CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59FDE2E32AAC39CF00A132CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59FDE2E62AAC39CF00A132CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +71,28 @@
 		59FDE2F72AAC39CF00A132CA /* PokeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FDE2FB2AAC39CF00A132CA /* PokeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeMeUITests.swift; sourceTree = "<group>"; };
 		59FDE2FD2AAC39CF00A132CA /* PokeMeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeMeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59FDE3102AACA4D700A132CA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		59FDE3122AACA4EA00A132CA /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		59FDE31A2AACA66200A132CA /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		59FDE31C2AACA67000A132CA /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		59FDE32A2AAD875400A132CA /* PokeListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListRouterProtocol.swift; sourceTree = "<group>"; };
+		59FDE32C2AAD876000A132CA /* PokeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListRouter.swift; sourceTree = "<group>"; };
+		59FDE32E2AAD879200A132CA /* PokeListPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListPresenterProtocol.swift; sourceTree = "<group>"; };
+		59FDE3302AAD87A600A132CA /* PokeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListPresenter.swift; sourceTree = "<group>"; };
+		59FDE3322AAD87BD00A132CA /* PokeListInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListInteractorProtocol.swift; sourceTree = "<group>"; };
+		59FDE3342AAD87D000A132CA /* PokeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListInteractor.swift; sourceTree = "<group>"; };
+		59FDE3362AAD87EA00A132CA /* PokeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListViewController.swift; sourceTree = "<group>"; };
+		59FDE3372AAD87EA00A132CA /* PokeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokeListViewController.xib; sourceTree = "<group>"; };
+		59FDE33A2AAD892C00A132CA /* PokeDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionViewController.swift; sourceTree = "<group>"; };
+		59FDE33B2AAD892C00A132CA /* PokeDescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokeDescriptionViewController.xib; sourceTree = "<group>"; };
+		59FDE3402AAD8BCD00A132CA /* PokeDescriptionInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionInteractorProtocol.swift; sourceTree = "<group>"; };
+		59FDE3422AAD8BE300A132CA /* PokeDescriptionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionInteractor.swift; sourceTree = "<group>"; };
+		59FDE3442AAD8BF800A132CA /* PokeDescriptionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionPresenterProtocol.swift; sourceTree = "<group>"; };
+		59FDE3462AAD8C0800A132CA /* PokeDescriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionPresenter.swift; sourceTree = "<group>"; };
+		59FDE3482AAD8C2700A132CA /* PokeDescriptionRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionRouterProtocol.swift; sourceTree = "<group>"; };
+		59FDE34A2AAD8C3B00A132CA /* PokeDescriptionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionRouter.swift; sourceTree = "<group>"; };
+		59FDE34C2AADCFA900A132CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		59FDE3512AADD42E00A132CA /* PokeListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59FDE3162AACA5D100A132CA /* Alamofire in Frameworks */,
+				59FDE3192AACA63100A132CA /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +145,12 @@
 		59FDE2D92AAC39CC00A132CA /* PokeMe */ = {
 			isa = PBXGroup;
 			children = (
-				59FDE2DA2AAC39CC00A132CA /* AppDelegate.swift */,
-				59FDE2DC2AAC39CC00A132CA /* SceneDelegate.swift */,
-				59FDE2DE2AAC39CC00A132CA /* ViewController.swift */,
+				59FDE30F2AACA2F300A132CA /* Constants */,
+				59FDE30E2AACA2F000A132CA /* Entity */,
+				59FDE30D2AACA2ED00A132CA /* Service */,
+				59FDE30C2AACA2EA00A132CA /* Extensions */,
+				59FDE30B2AACA2E800A132CA /* Modules */,
+				59FDE30A2AACA2E500A132CA /* AppDelegate */,
 				59FDE2E02AAC39CC00A132CA /* Main.storyboard */,
 				59FDE2E32AAC39CF00A132CA /* Assets.xcassets */,
 				59FDE2E52AAC39CF00A132CA /* LaunchScreen.storyboard */,
@@ -127,6 +176,184 @@
 			path = PokeMeUITests;
 			sourceTree = "<group>";
 		};
+		59FDE30A2AACA2E500A132CA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE2DA2AAC39CC00A132CA /* AppDelegate.swift */,
+				59FDE2DC2AAC39CC00A132CA /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		59FDE30B2AACA2E800A132CA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE31F2AAD7DF300A132CA /* PokeDescription */,
+				59FDE31E2AAD7DEA00A132CA /* PokeList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		59FDE30C2AACA2EA00A132CA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE31A2AACA66200A132CA /* UIColor.swift */,
+				59FDE31C2AACA67000A132CA /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		59FDE30D2AACA2ED00A132CA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3122AACA4EA00A132CA /* ServiceProtocol.swift */,
+				59FDE3102AACA4D700A132CA /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		59FDE30E2AACA2F000A132CA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE34E2AADD37A00A132CA /* Model */,
+				59FDE3502AADD38900A132CA /* Request */,
+				59FDE34F2AADD38100A132CA /* Response */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		59FDE30F2AACA2F300A132CA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE34C2AADCFA900A132CA /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		59FDE31E2AAD7DEA00A132CA /* PokeList */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3292AAD871900A132CA /* View */,
+				59FDE3282AAD871700A132CA /* Interactor */,
+				59FDE3272AAD871500A132CA /* Presenter */,
+				59FDE3262AAD871200A132CA /* Router */,
+			);
+			path = PokeList;
+			sourceTree = "<group>";
+		};
+		59FDE31F2AAD7DF300A132CA /* PokeDescription */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3242AAD867300A132CA /* View */,
+				59FDE3232AAD867000A132CA /* Interactor */,
+				59FDE3212AAD866600A132CA /* Presenter */,
+				59FDE3252AAD868D00A132CA /* Router */,
+			);
+			path = PokeDescription;
+			sourceTree = "<group>";
+		};
+		59FDE3212AAD866600A132CA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3442AAD8BF800A132CA /* PokeDescriptionPresenterProtocol.swift */,
+				59FDE3462AAD8C0800A132CA /* PokeDescriptionPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		59FDE3232AAD867000A132CA /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3402AAD8BCD00A132CA /* PokeDescriptionInteractorProtocol.swift */,
+				59FDE3422AAD8BE300A132CA /* PokeDescriptionInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		59FDE3242AAD867300A132CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE33E2AAD893F00A132CA /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		59FDE3252AAD868D00A132CA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3482AAD8C2700A132CA /* PokeDescriptionRouterProtocol.swift */,
+				59FDE34A2AAD8C3B00A132CA /* PokeDescriptionRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		59FDE3262AAD871200A132CA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE32A2AAD875400A132CA /* PokeListRouterProtocol.swift */,
+				59FDE32C2AAD876000A132CA /* PokeListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		59FDE3272AAD871500A132CA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE32E2AAD879200A132CA /* PokeListPresenterProtocol.swift */,
+				59FDE3302AAD87A600A132CA /* PokeListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		59FDE3282AAD871700A132CA /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3322AAD87BD00A132CA /* PokeListInteractorProtocol.swift */,
+				59FDE3342AAD87D000A132CA /* PokeListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		59FDE3292AAD871900A132CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3362AAD87EA00A132CA /* PokeListViewController.swift */,
+				59FDE3372AAD87EA00A132CA /* PokeListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		59FDE33E2AAD893F00A132CA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE33A2AAD892C00A132CA /* PokeDescriptionViewController.swift */,
+				59FDE33B2AAD892C00A132CA /* PokeDescriptionViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		59FDE34E2AADD37A00A132CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59FDE34F2AADD38100A132CA /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		59FDE3502AADD38900A132CA /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				59FDE3512AADD42E00A132CA /* PokeListRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +370,10 @@
 			dependencies = (
 			);
 			name = PokeMe;
+			packageProductDependencies = (
+				59FDE3152AACA5D100A132CA /* Alamofire */,
+				59FDE3182AACA63100A132CA /* Lottie */,
+			);
 			productName = PokeMe;
 			productReference = 59FDE2D72AAC39CC00A132CA /* PokeMe.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +446,10 @@
 				Base,
 			);
 			mainGroup = 59FDE2CE2AAC39CC00A132CA;
+			packageReferences = (
+				59FDE3142AACA5D100A132CA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				59FDE3172AACA63100A132CA /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = 59FDE2D82AAC39CC00A132CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,6 +467,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				59FDE2E72AAC39CF00A132CA /* LaunchScreen.storyboard in Resources */,
+				59FDE33D2AAD892C00A132CA /* PokeDescriptionViewController.xib in Resources */,
+				59FDE3392AAD87EA00A132CA /* PokeListViewController.xib in Resources */,
 				59FDE2E42AAC39CF00A132CA /* Assets.xcassets in Resources */,
 				59FDE2E22AAC39CC00A132CA /* Main.storyboard in Resources */,
 			);
@@ -258,9 +495,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59FDE2DF2AAC39CC00A132CA /* ViewController.swift in Sources */,
+				59FDE3452AAD8BF800A132CA /* PokeDescriptionPresenterProtocol.swift in Sources */,
+				59FDE33C2AAD892C00A132CA /* PokeDescriptionViewController.swift in Sources */,
 				59FDE2DB2AAC39CC00A132CA /* AppDelegate.swift in Sources */,
 				59FDE2DD2AAC39CC00A132CA /* SceneDelegate.swift in Sources */,
+				59FDE31D2AACA67000A132CA /* UIViewController.swift in Sources */,
+				59FDE32D2AAD876000A132CA /* PokeListRouter.swift in Sources */,
+				59FDE32F2AAD879200A132CA /* PokeListPresenterProtocol.swift in Sources */,
+				59FDE3312AAD87A600A132CA /* PokeListPresenter.swift in Sources */,
+				59FDE3382AAD87EA00A132CA /* PokeListViewController.swift in Sources */,
+				59FDE3432AAD8BE400A132CA /* PokeDescriptionInteractor.swift in Sources */,
+				59FDE3472AAD8C0800A132CA /* PokeDescriptionPresenter.swift in Sources */,
+				59FDE34D2AADCFA900A132CA /* Constants.swift in Sources */,
+				59FDE3112AACA4D700A132CA /* Service.swift in Sources */,
+				59FDE3132AACA4EA00A132CA /* ServiceProtocol.swift in Sources */,
+				59FDE32B2AAD875400A132CA /* PokeListRouterProtocol.swift in Sources */,
+				59FDE34B2AAD8C3B00A132CA /* PokeDescriptionRouter.swift in Sources */,
+				59FDE3522AADD42E00A132CA /* PokeListRequest.swift in Sources */,
+				59FDE3492AAD8C2700A132CA /* PokeDescriptionRouterProtocol.swift in Sources */,
+				59FDE3412AAD8BCD00A132CA /* PokeDescriptionInteractorProtocol.swift in Sources */,
+				59FDE3352AAD87D000A132CA /* PokeListInteractor.swift in Sources */,
+				59FDE3332AAD87BD00A132CA /* PokeListInteractorProtocol.swift in Sources */,
+				59FDE31B2AACA66200A132CA /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +852,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59FDE3142AACA5D100A132CA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		59FDE3172AACA63100A132CA /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59FDE3152AACA5D100A132CA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59FDE3142AACA5D100A132CA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		59FDE3182AACA63100A132CA /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59FDE3172AACA63100A132CA /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 59FDE2CF2AAC39CC00A132CA /* Project object */;
 }
