@@ -12,5 +12,12 @@ protocol PokeListPresenterProtocol {
     var router: PokeListRouterProtocol? { get set }
     var interactor: PokeListInteractorProtocol? { get set }
     
-    func fetchPokeList()
+    //MARK: - Input
+    func fetchPokeList(request: PokeListRequest) async
+    
+    
+    //MARK: - Output
+    func interactorDidFetchPokeList(with result: Result<PokemonListResponse, Error>)
+    func numberOfItems() -> Int
+    func pokemonAtIndex(index: Int) -> PokemonModel?
 }

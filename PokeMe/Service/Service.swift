@@ -11,32 +11,22 @@ import Alamofire
 
 class Service: ServiceProtocol {
     
-    func getOperation(url: String, parameters: ServiceParameters, completion: @escaping ServiceCompletion) {
+    func getOperation(url: String, parameters: ServiceParameters) async throws -> Any {
         
-        Session.default.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil, interceptor: nil)
-            .response { response in
-                
-                switch response.result {
-                case .success(let data):
-                    completion(data, nil)
-                case .failure(let error):
-                    completion(nil, error)
+        return try await withCheckedThrowingContinuation { continuation in
+            Session.default.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil, interceptor: nil)
+                .response { response in
+                    
+                    switch response.result {
+                    case .success(let data):
+                        guard let result = data else {
+                            fatalError("Expected non-nil result in the non-error case")
+                        }
+                        continuation.resume(returning: result)
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
+                    }
                 }
-            }
+        }
     }
-    
-//    func postOperation(parameters: [String: Any], completion: @escaping ServiceCompletion) {
-//        
-//        let url = "https://pokeapi.co/api/v2/pokemon"
-//        Session.default.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil, interceptor: nil)
-//            .response { response in
-//                
-//                switch response.result {
-//                case .success(let data):
-//                    completion(data, nil)
-//                case .failure(let error):
-//                    completion(nil, error)
-//                }
-//            }
-//    }
 }

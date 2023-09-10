@@ -13,26 +13,22 @@ class PokeListInteractor: PokeListInteractorProtocol {
     let service = Service()
     var presenter: PokeListPresenterProtocol?
     
-    func fetchPokeList() {
+    func fetchPokeList(request: PokeListRequest) async {
         
-        self.service.getOperation(url: Constants.pokemon) { response, error in
+        let parameters = request.convertToServiceParameters()
+        
+        do {
+            let response = try await self.service.getOperation(url: request.url, parameters: parameters)
             
-            guard let data = response as? Data, error == nil else {
-//                self.presenter?.interactorDidFetchCurrentWeather(with: .failure(AFError))
-//                print(ServiceError.failed.localizedDescription)
-                return
+            if let data = response as? Data {
+//                let responseData =  try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
+//                print(responseData)
+                let pokemonList = try JSONDecoder().decode(PokemonListResponse.self, from: data)
+                self.presenter?.interactorDidFetchPokeList(with: .success(pokemonList))
             }
-            do {
-                let responseData =  try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-                print(responseData)
-//                let weather = try JSONDecoder().decode(CurrentWeatherResponse.self, from: data)
-//                self.presenter?.interactorDidFetchCurrentWeather(with: .success(weather))
-            }
-            catch {
-//                self.presenter?.interactorDidFetchCurrentWeather(with: .failure(error))
-                print(error.localizedDescription)
-            }
-            
+        }
+        catch {
+            self.presenter?.interactorDidFetchPokeList(with: .failure(error))
         }
     }
 }

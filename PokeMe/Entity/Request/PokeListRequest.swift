@@ -7,13 +7,13 @@
 
 import UIKit
 
-class PokeListRequest {
-    var url: String?
+struct PokeListRequest {
+    var url: String!
     var limit: Int?
     
-    func convertToDictionary() -> AnyObject {
-        var payload:Dictionary = [String: AnyObject]()
+    func convertToServiceParameters() -> ServiceParameters {
+        var payload:Dictionary = [String: Any]()
         payload["limit"] = self.limit as AnyObject
-        return payload as AnyObject
+        return payload as ServiceParameters
     }
 }
