@@ -9,4 +9,5 @@ import UIKit
 
 class Constants {
     public static let pokemon = "https://pokeapi.co/api/v2/pokemon/"
+    public static let appTitle = "PokeMe"
 }

@@ -17,12 +17,13 @@ class PokeListItemTableViewCell: UITableViewCell {
     
     
     //MARK: - Lifecycle
-    func configureWith(model: PokemonModel) {
+    func configureWith(model: PokemonItemModel) {
         self.titleLabel.text = model.name?.capitalized
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

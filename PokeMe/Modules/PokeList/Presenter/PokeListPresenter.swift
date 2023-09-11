@@ -12,9 +12,10 @@ class PokeListPresenter: PokeListPresenterProtocol {
     var view: (PokeListViewProtocol & UIViewController)?
     var router: PokeListRouterProtocol?
     var interactor: PokeListInteractorProtocol?
-    var pokemonList: [PokemonModel]?
-    var pokemonSearchList: [PokemonModel]?
+    var pokemonList: [PokemonItemModel]?
+    var pokemonSearchList: [PokemonItemModel]?
 
+    
     init(interactor: PokeListInteractorProtocol, router: PokeListRouterProtocol, view: (PokeListViewProtocol & UIViewController)) {
         self.view = view
         self.interactor = interactor
@@ -37,7 +38,7 @@ class PokeListPresenter: PokeListPresenterProtocol {
         }
     }
     
-    func pokemonAtIndex(index: Int) -> PokemonModel? {
+    func pokemonAtIndex(index: Int) -> PokemonItemModel? {
         return self.pokemonList?[index]
     }
     
@@ -50,9 +51,9 @@ class PokeListPresenter: PokeListPresenterProtocol {
         self.view?.showData()
     }
     
-    private func transformToModelList(response: [PokemonItemResponse]?) -> [PokemonModel] {
+    private func transformToModelList(response: [PokemonItemResponse]?) -> [PokemonItemModel] {
         
-        var array = [PokemonModel]()
+        var array = [PokemonItemModel]()
         
         if let response = response {
             for pokemonResponse in response {
@@ -63,7 +64,7 @@ class PokeListPresenter: PokeListPresenterProtocol {
         return array
     }
     
-    private func transformToModel(response: PokemonItemResponse) -> PokemonModel {
-        return PokemonModel(name: response.name, url: response.url)
+    private func transformToModel(response: PokemonItemResponse) -> PokemonItemModel {
+        return PokemonItemModel(name: response.name, url: response.url)
     }
 }

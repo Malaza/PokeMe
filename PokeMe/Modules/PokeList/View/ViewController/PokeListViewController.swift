@@ -28,6 +28,7 @@ class PokeListViewController: UIViewController {
     private func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.separatorColor = .clear
         self.tableView.register(UINib(nibName: PokeListItemTableViewCell.identifier, bundle: nil),
                                 forCellReuseIdentifier: PokeListItemTableViewCell.identifier)
     }
@@ -40,6 +41,7 @@ class PokeListViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpNavigationBar(title: Constants.appTitle, backButton: false) 
         self.setupTableView()
         self.fetchPokeList()
     }
@@ -50,6 +52,7 @@ extension PokeListViewController: PokeListViewProtocol {
     
     func fetchPokeList() {
         Task.init {
+            self.showLoadingView()
             let request = PokeListRequest(url: Constants.pokemon, limit: 100)
             await self.presenter?.fetchPokeList(request: request)
         }
@@ -57,6 +60,7 @@ extension PokeListViewController: PokeListViewProtocol {
     
     func showData() {
         DispatchQueue.main.async {
+            self.hideLoadingView()
             self.tableView.reloadData()
         }
     }

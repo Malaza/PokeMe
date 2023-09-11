@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PokeDescriptionPresenterProtocol {
-    var view: PokeDescriptionViewProtocol? { get set }
+    var view: (PokeDescriptionViewProtocol & UIViewController)? { get set }
     var router: PokeDescriptionRouterProtocol? { get set }
     var interactor: PokeDescriptionInteractorProtocol? { get set }
     
@@ -18,4 +18,5 @@ protocol PokeDescriptionPresenterProtocol {
     
     //MARK: - Output
     func interactorDidFetchPokeDescription(with result: Result<PokemonResponse, Error>)
+    func pokemonObject() -> PokemonModel?
 }

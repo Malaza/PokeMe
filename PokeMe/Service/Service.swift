@@ -8,7 +8,6 @@
 import UIKit
 import Alamofire
 
-
 class Service: ServiceProtocol {
     
     func getOperation(url: String, parameters: ServiceParameters?) async throws -> Any {
@@ -28,5 +27,23 @@ class Service: ServiceProtocol {
                     }
                 }
         }
+    }
+    
+    
+    public static func executeImageDownload(url: URL, completion: @escaping ServiceCompletion) {
+        
+        let request = NSMutableURLRequest(url: url,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        
+        let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            
+            guard let data = data, error == nil else {
+                completion(nil, error?.asAFError)
+                return
+            }
+            completion(data, nil)
+        })
+        dataTask.resume()
     }
 }

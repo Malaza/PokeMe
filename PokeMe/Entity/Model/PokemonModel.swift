@@ -8,6 +8,13 @@
 import UIKit
 
 struct PokemonModel {
+    var id: Int?
+    var baseExperience: String?
+    var height: String?
+    var isDefault: Bool?
+    var locationAreaEncounters: String?
     var name: String?
-    var url: String?
+    var order: String?
+    var spriteUrl: String?
+    var weight: String?
 }
