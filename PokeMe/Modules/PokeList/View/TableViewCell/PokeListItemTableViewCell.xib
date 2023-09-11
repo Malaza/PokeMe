@@ -16,17 +16,26 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBj-fm-m87">
-                        <rect key="frame" x="20" y="20" width="280" height="102"/>
+                        <rect key="frame" x="80" y="20" width="220" height="102"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T21-vr-oMT">
+                        <rect key="frame" x="20" y="51" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="OWX-bS-Lyo"/>
+                            <constraint firstAttribute="height" constant="40" id="Uwk-7Y-tMZ"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="T21-vr-oMT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="BPX-O7-rE3"/>
                     <constraint firstAttribute="trailing" secondItem="vBj-fm-m87" secondAttribute="trailing" constant="20" id="IW0-xE-FlP"/>
+                    <constraint firstItem="vBj-fm-m87" firstAttribute="leading" secondItem="T21-vr-oMT" secondAttribute="trailing" constant="20" id="bMq-Md-q5P"/>
                     <constraint firstItem="vBj-fm-m87" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="jUw-Sm-pxz"/>
-                    <constraint firstItem="vBj-fm-m87" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="pwz-rz-yGU"/>
                     <constraint firstAttribute="bottom" secondItem="vBj-fm-m87" secondAttribute="bottom" constant="20" id="tRK-QS-C1O"/>
+                    <constraint firstItem="T21-vr-oMT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yHY-iY-h1S"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

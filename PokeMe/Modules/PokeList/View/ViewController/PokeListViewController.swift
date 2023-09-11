@@ -15,23 +15,51 @@ protocol PokeListViewProtocol {
 
 class PokeListViewController: UIViewController {
 
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    //MARK: - Variables
     var presenter: PokeListPresenterProtocol?
     
+    
     //MARK: - Setup
-    func setupTableView() {
+    private func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: PokeListItemTableViewCell.identifier, bundle: nil),
                                 forCellReuseIdentifier: PokeListItemTableViewCell.identifier)
     }
     
+    private func setupSearchBar() {
+        self.searchBar.delegate = self
+    }
+    
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
         self.fetchPokeList()
+    }
+}
+
+
+extension PokeListViewController: PokeListViewProtocol {
+    
+    func fetchPokeList() {
+        Task.init {
+            let request = PokeListRequest(url: Constants.pokemon, limit: 100)
+            await self.presenter?.fetchPokeList(request: request)
+        }
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -59,18 +87,12 @@ extension PokeListViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 
-extension PokeListViewController: PokeListViewProtocol {
+extension PokeListViewController: UISearchBarDelegate {
     
-    func fetchPokeList() {
-        Task.init {
-            let request = PokeListRequest(url: Constants.pokemon, limit: 100)
-            await self.presenter?.fetchPokeList(request: request)
-        }
-    }
-    
-    func reloadData() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.count > 2 {
+            self.presenter?.searchWithQuery(query: searchText)
         }
     }
 }

@@ -20,4 +20,5 @@ protocol PokeListPresenterProtocol {
     func interactorDidFetchPokeList(with result: Result<PokemonListResponse, Error>)
     func numberOfItems() -> Int
     func pokemonAtIndex(index: Int) -> PokemonModel?
+    func searchWithQuery(query: String)
 }

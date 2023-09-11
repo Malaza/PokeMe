@@ -13,6 +13,7 @@ class PokeListPresenter: PokeListPresenterProtocol {
     var router: PokeListRouterProtocol?
     var interactor: PokeListInteractorProtocol?
     var pokemonList: [PokemonModel]?
+    var pokemonSearchList: [PokemonModel]?
 
     init(interactor: PokeListInteractorProtocol, router: PokeListRouterProtocol, view: PokeListViewProtocol) {
         self.view = view
@@ -33,6 +34,7 @@ class PokeListPresenter: PokeListPresenterProtocol {
         switch result {
             case .success(let data):
             self.pokemonList = self.transformToModelList(response: data.results)
+            self.pokemonSearchList = pokemonList
             self.view?.reloadData()
             case .failure(let error):
             print(error)
@@ -45,6 +47,11 @@ class PokeListPresenter: PokeListPresenterProtocol {
     
     func numberOfItems() -> Int {
         return self.pokemonList?.count ?? 0
+    }
+    
+    func searchWithQuery(query: String) {
+        self.pokemonList = self.pokemonList?.filter({ $0.name?.range(of: query, options: .caseInsensitive) != nil })
+        self.view?.reloadData()
     }
     
     
