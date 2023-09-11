@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PokeListPresenterProtocol {
-    var view: PokeListViewProtocol? { get set }
+    var view: (PokeListViewProtocol & UIViewController)? { get set }
     var router: PokeListRouterProtocol? { get set }
     var interactor: PokeListInteractorProtocol? { get set }
     

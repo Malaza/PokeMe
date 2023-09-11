@@ -9,7 +9,7 @@ import UIKit
 
 protocol PokeListViewProtocol {
     func fetchPokeList()
-    func reloadData()
+    func showData()
 }
 
 
@@ -56,7 +56,7 @@ extension PokeListViewController: PokeListViewProtocol {
         }
     }
     
-    func reloadData() {
+    func showData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -82,7 +82,7 @@ extension PokeListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //Transition to detail screen
+        self.presenter?.router?.presentPokeDescriptionViewController()
     }
 }
 

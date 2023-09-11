@@ -22,4 +22,9 @@ class PokeListRouter: PokeListRouterProtocol {
         interactor.presenter = presenter
         return vc
     }
+    
+    func presentPokeDescriptionViewController() {
+        let viewController = PokeDescriptionRouter.setupModule()
+        self.presenter?.view?.navigationController?.pushViewController(viewController, animated: true)
+    }
 }

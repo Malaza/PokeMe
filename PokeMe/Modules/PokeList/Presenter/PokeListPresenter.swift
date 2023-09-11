@@ -9,33 +9,29 @@ import UIKit
 
 class PokeListPresenter: PokeListPresenterProtocol {
     
-    var view: PokeListViewProtocol?
+    var view: (PokeListViewProtocol & UIViewController)?
     var router: PokeListRouterProtocol?
     var interactor: PokeListInteractorProtocol?
     var pokemonList: [PokemonModel]?
     var pokemonSearchList: [PokemonModel]?
 
-    init(interactor: PokeListInteractorProtocol, router: PokeListRouterProtocol, view: PokeListViewProtocol) {
+    init(interactor: PokeListInteractorProtocol, router: PokeListRouterProtocol, view: (PokeListViewProtocol & UIViewController)) {
         self.view = view
         self.interactor = interactor
         self.router = router
     }
     
-    
-    //MARK: - Input
     func fetchPokeList(request: PokeListRequest) async {
         await self.interactor?.fetchPokeList(request: request)
     }
     
-    
-    //MARK: - Output
     func interactorDidFetchPokeList(with result: Result<PokemonListResponse, Error>) {
         
         switch result {
             case .success(let data):
             self.pokemonList = self.transformToModelList(response: data.results)
             self.pokemonSearchList = pokemonList
-            self.view?.reloadData()
+            self.view?.showData()
             case .failure(let error):
             print(error)
         }
@@ -51,11 +47,9 @@ class PokeListPresenter: PokeListPresenterProtocol {
     
     func searchWithQuery(query: String) {
         self.pokemonList = self.pokemonList?.filter({ $0.name?.range(of: query, options: .caseInsensitive) != nil })
-        self.view?.reloadData()
+        self.view?.showData()
     }
     
-    
-    //MARK: - Transform
     private func transformToModelList(response: [PokemonItemResponse]?) -> [PokemonModel] {
         
         var array = [PokemonModel]()

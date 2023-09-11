@@ -8,5 +8,8 @@
 import UIKit
 
 protocol PokeListRouterProtocol {
+    
     var presenter: PokeListPresenterProtocol? { get set }
+    
+    func presentPokeDescriptionViewController()
 }

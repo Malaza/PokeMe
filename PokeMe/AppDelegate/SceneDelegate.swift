@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let weatherView = PokeListRouter.setupModule()
-        let navigationController = UINavigationController(rootViewController: weatherView)
+        let viewController = PokeListRouter.setupModule()
+        let navigationController = UINavigationController(rootViewController: viewController)
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
