@@ -8,7 +8,7 @@
 import UIKit
 
 class PokeDescriptionPresenter: PokeDescriptionPresenterProtocol {
-
+    
     var view: PokeDescriptionViewProtocol?
     var router: PokeDescriptionRouterProtocol?
     var interactor: PokeDescriptionInteractorProtocol?
@@ -17,5 +17,13 @@ class PokeDescriptionPresenter: PokeDescriptionPresenterProtocol {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    func fetchPokeDescription(request: PokeDescriptionRequest) async {
+        await self.interactor?.fetchPokeDescription(request: request)
+    }
+    
+    func interactorDidFetchPokeDescription(with result: Result<PokemonResponse, Error>) {
+        
     }
 }

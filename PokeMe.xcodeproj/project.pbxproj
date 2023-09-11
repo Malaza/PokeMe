@@ -45,6 +45,9 @@
 		59FDE35A2AAE104500A132CA /* PokemonItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE3592AAE104500A132CA /* PokemonItemResponse.swift */; };
 		59FDE35F2AAE4D3200A132CA /* PokeListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE35D2AAE4D3200A132CA /* PokeListItemTableViewCell.swift */; };
 		59FDE3602AAE4D3200A132CA /* PokeListItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FDE35E2AAE4D3200A132CA /* PokeListItemTableViewCell.xib */; };
+		59FE84592AAF377C00A45E26 /* PokeDescriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE84582AAF377C00A45E26 /* PokeDescriptionRequest.swift */; };
+		59FE845D2AAF396200A45E26 /* PokeDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FE845B2AAF396200A45E26 /* PokeDescriptionTableViewCell.swift */; };
+		59FE845E2AAF396200A45E26 /* PokeDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FE845C2AAF396200A45E26 /* PokeDescriptionTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		59FDE3592AAE104500A132CA /* PokemonItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonItemResponse.swift; sourceTree = "<group>"; };
 		59FDE35D2AAE4D3200A132CA /* PokeListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListItemTableViewCell.swift; sourceTree = "<group>"; };
 		59FDE35E2AAE4D3200A132CA /* PokeListItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokeListItemTableViewCell.xib; sourceTree = "<group>"; };
+		59FE84582AAF377C00A45E26 /* PokeDescriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionRequest.swift; sourceTree = "<group>"; };
+		59FE845B2AAF396200A45E26 /* PokeDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		59FE845C2AAF396200A45E26 /* PokeDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokeDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +291,7 @@
 		59FDE3242AAD867300A132CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				59FE845A2AAF394000A45E26 /* TableViewCell */,
 				59FDE33E2AAD893F00A132CA /* ViewController */,
 			);
 			path = View;
@@ -366,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				59FDE3512AADD42E00A132CA /* PokeListRequest.swift */,
+				59FE84582AAF377C00A45E26 /* PokeDescriptionRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -384,6 +392,15 @@
 			children = (
 				59FDE35D2AAE4D3200A132CA /* PokeListItemTableViewCell.swift */,
 				59FDE35E2AAE4D3200A132CA /* PokeListItemTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		59FE845A2AAF394000A45E26 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				59FE845B2AAF396200A45E26 /* PokeDescriptionTableViewCell.swift */,
+				59FE845C2AAF396200A45E26 /* PokeDescriptionTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -505,6 +522,7 @@
 				59FDE3392AAD87EA00A132CA /* PokeListViewController.xib in Resources */,
 				59FDE2E42AAC39CF00A132CA /* Assets.xcassets in Resources */,
 				59FDE2E22AAC39CC00A132CA /* Main.storyboard in Resources */,
+				59FE845E2AAF396200A45E26 /* PokeDescriptionTableViewCell.xib in Resources */,
 				59FDE3602AAE4D3200A132CA /* PokeListItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,9 +571,11 @@
 				59FDE3522AADD42E00A132CA /* PokeListRequest.swift in Sources */,
 				59FDE3492AAD8C2700A132CA /* PokeDescriptionRouterProtocol.swift in Sources */,
 				59FDE3412AAD8BCD00A132CA /* PokeDescriptionInteractorProtocol.swift in Sources */,
+				59FE84592AAF377C00A45E26 /* PokeDescriptionRequest.swift in Sources */,
 				59FDE3352AAD87D000A132CA /* PokeListInteractor.swift in Sources */,
 				59FDE35F2AAE4D3200A132CA /* PokeListItemTableViewCell.swift in Sources */,
 				59FDE3332AAD87BD00A132CA /* PokeListInteractorProtocol.swift in Sources */,
+				59FE845D2AAF396200A45E26 /* PokeDescriptionTableViewCell.swift in Sources */,
 				59FDE31B2AACA66200A132CA /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

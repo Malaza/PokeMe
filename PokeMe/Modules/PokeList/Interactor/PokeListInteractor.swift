@@ -21,8 +21,6 @@ class PokeListInteractor: PokeListInteractorProtocol {
             let response = try await self.service.getOperation(url: request.url, parameters: parameters)
             
             if let data = response as? Data {
-//                let responseData =  try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-//                print(responseData)
                 let pokemonList = try JSONDecoder().decode(PokemonListResponse.self, from: data)
                 self.presenter?.interactorDidFetchPokeList(with: .success(pokemonList))
             }

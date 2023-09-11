@@ -17,7 +17,6 @@ class PokeListViewController: UIViewController {
 
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
     
@@ -82,7 +81,10 @@ extension PokeListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.router?.presentPokeDescriptionViewController()
+        
+        if let model = self.presenter?.pokemonAtIndex(index: indexPath.row) {
+            self.presenter?.router?.presentPokeDescriptionViewController(with: model.url ?? "")
+        }
     }
 }
 

@@ -11,7 +11,7 @@ import Alamofire
 
 class Service: ServiceProtocol {
     
-    func getOperation(url: String, parameters: ServiceParameters) async throws -> Any {
+    func getOperation(url: String, parameters: ServiceParameters?) async throws -> Any {
         
         return try await withCheckedThrowingContinuation { continuation in
             Session.default.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil, interceptor: nil)

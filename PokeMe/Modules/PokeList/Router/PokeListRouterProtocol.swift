@@ -11,5 +11,5 @@ protocol PokeListRouterProtocol {
     
     var presenter: PokeListPresenterProtocol? { get set }
     
-    func presentPokeDescriptionViewController()
+    func presentPokeDescriptionViewController(with url: String)
 }
