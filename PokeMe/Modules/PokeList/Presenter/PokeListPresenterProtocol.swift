@@ -13,7 +13,7 @@ protocol PokeListPresenterProtocol {
     var interactor: PokeListInteractorProtocol? { get set }
     
     //MARK: - Input
-    func fetchPokeList(request: PokeListRequest) async
+    func fetchPokeList() async
     
     
     //MARK: - Output

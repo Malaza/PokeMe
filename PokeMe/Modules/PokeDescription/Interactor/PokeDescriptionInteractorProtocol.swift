@@ -10,5 +10,5 @@ import UIKit
 protocol PokeDescriptionInteractorProtocol {
     var presenter: PokeDescriptionPresenterProtocol? { get set }
     
-    func fetchPokeDescription(request: PokeDescriptionRequest) async
+    func fetchPokeDescription() async
 }

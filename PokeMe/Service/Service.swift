@@ -10,10 +10,10 @@ import Alamofire
 
 class Service: ServiceProtocol {
     
-    func getOperation(url: String, parameters: ServiceParameters?) async throws -> Any {
+    func getOperation() async throws -> Any {
         
         return try await withCheckedThrowingContinuation { continuation in
-            Session.default.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil, interceptor: nil)
+            Session.default.request("https://pokeapi.co/api/v2/pokemon/?limit=100", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil)
                 .response { response in
                     
                     switch response.result {

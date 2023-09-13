@@ -26,6 +26,7 @@ class PokeDescriptionViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.separatorColor = .clear
+        self.tableView.estimatedRowHeight = 400
         self.tableView.register(UINib(nibName: PokeDescriptionTableViewCell.identifier, bundle: nil),
                                 forCellReuseIdentifier: PokeDescriptionTableViewCell.identifier)
     }
@@ -47,7 +48,7 @@ class PokeDescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpNavigationBar(title: Constants.appTitle, backButton: true)
+        self.title = self.presenter?.pokemonObject()?.name?.capitalized
         self.setupTableView()
         self.fetchPokeDescription()
     }
@@ -59,8 +60,7 @@ extension PokeDescriptionViewController: PokeDescriptionViewProtocol {
     func fetchPokeDescription() {
         Task.init {
             self.showLoadingView()
-            let request = PokeDescriptionRequest(url: self.url)
-            await self.presenter?.fetchPokeDescription(request: request)
+            await self.presenter?.fetchPokeDescription()
         }
     }
     
@@ -88,9 +88,5 @@ extension PokeDescriptionViewController: UITableViewDataSource, UITableViewDeleg
             }
         }
         return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
     }
 }

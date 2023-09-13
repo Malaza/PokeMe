@@ -13,12 +13,10 @@ class PokeListInteractor: PokeListInteractorProtocol {
     let service = Service()
     var presenter: PokeListPresenterProtocol?
     
-    func fetchPokeList(request: PokeListRequest) async {
-        
-        let parameters = request.convertToServiceParameters()
+    func fetchPokeList() async {
         
         do {
-            let response = try await self.service.getOperation(url: request.url, parameters: parameters)
+            let response = try await self.service.getOperation()
             
             if let data = response as? Data {
                 let pokemonList = try JSONDecoder().decode(PokemonListResponse.self, from: data)

@@ -10,5 +10,5 @@ import UIKit
 protocol PokeListInteractorProtocol {
     var presenter: PokeListPresenterProtocol? { get set }
     
-    func fetchPokeList(request: PokeListRequest) async
+    func fetchPokeList() async
 }

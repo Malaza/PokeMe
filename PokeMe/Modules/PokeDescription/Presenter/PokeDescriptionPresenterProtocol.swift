@@ -13,7 +13,7 @@ protocol PokeDescriptionPresenterProtocol {
     var interactor: PokeDescriptionInteractorProtocol? { get set }
     
     //MARK: - Input
-    func fetchPokeDescription(request: PokeDescriptionRequest) async
+    func fetchPokeDescription() async
     
     
     //MARK: - Output

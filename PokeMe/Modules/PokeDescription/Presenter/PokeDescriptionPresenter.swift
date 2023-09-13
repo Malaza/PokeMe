@@ -21,8 +21,8 @@ class PokeDescriptionPresenter: PokeDescriptionPresenterProtocol {
         self.router = router
     }
     
-    func fetchPokeDescription(request: PokeDescriptionRequest) async {
-        await self.interactor?.fetchPokeDescription(request: request)
+    func fetchPokeDescription() async {
+        await self.interactor?.fetchPokeDescription()
     }
     
     func pokemonObject() -> PokemonModel? {
