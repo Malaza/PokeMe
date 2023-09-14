@@ -13,11 +13,10 @@ protocol PokeDescriptionViewProtocol {
 
 class PokeDescriptionViewController: UIViewController {
 
-    //MARK: - Outlets
+    
     @IBOutlet weak var tableView: UITableView!
     
     
-    //MARK: - Variables
     var presenter: PokeDescriptionPresenterProtocol?
     var url: String?
     
@@ -32,7 +31,6 @@ class PokeDescriptionViewController: UIViewController {
     }
     
     
-    //MAARK: - Lifecycle
     convenience init(url: String?) {
         self.init()
         self.url = url
@@ -50,20 +48,13 @@ class PokeDescriptionViewController: UIViewController {
         super.viewDidLoad()
         self.title = self.presenter?.pokemonObject()?.name?.capitalized
         self.setupTableView()
-        self.fetchPokeDescription(url: self.url)
+        self.fetchPokeDescription(url: self.url ?? "")
     }
     
-    func fetchPokeDescription(url: String?) {
-        Task {
-            self.showLoadingView()
-            await self.presenter?.fetchPokeDescription(from: url)
-        }
-    }
     
-    func fetchImage(from url: URL) {
-        Task {
-            let image = await self.presenter?.fetchImage(from: url)
-        }
+    func fetchPokeDescription(url: String) {
+        self.showLoadingView()
+        self.presenter?.fetchPokeDescription(from: url)
     }
 }
 

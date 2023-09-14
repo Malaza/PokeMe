@@ -21,17 +21,8 @@ class PokeDescriptionPresenter: PokeDescriptionPresenterProtocol {
         self.router = router
     }
     
-    func fetchPokeDescription(from url: String?) async {
-        await self.interactor?.fetchPokeDescription(from: url)
-    }
-    
-    func fetchImage(from url: URL) async -> UIImage? {
-        do {
-            return try await self.interactor?.fetchImage(from: url)
-        }
-        catch {
-            return nil
-        }
+    func fetchPokeDescription(from url: String) {
+        self.interactor?.fetchPokeDescription(from: url)
     }
     
     func pokemonObject() -> PokemonModel? {
@@ -45,7 +36,8 @@ class PokeDescriptionPresenter: PokeDescriptionPresenterProtocol {
             self.pokemon = self.transformToModel(response: data)
             self.view?.showData()
             case .failure(let error):
-            self.view?.showErrorMessage(message: error.localizedDescription)
+            print(error)
+//            self.view?.showErrorMessage(message: error.localizedDescription)
         }
     }
     
@@ -58,7 +50,7 @@ class PokeDescriptionPresenter: PokeDescriptionPresenterProtocol {
         model.isDefault = response.is_default
         model.locationAreaEncounters = response.location_area_encounters
         model.order = String(response.order ?? 0)
-        model.spriteUrl = response.sprites?.other?.dream_world?.front_default
+        model.spriteUrl = response.sprites?.other?.home?.front_default
         model.weight = String(response.weight ?? 0)
         return model
     }

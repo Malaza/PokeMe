@@ -9,22 +9,28 @@ import UIKit
 import Alamofire
 
 class PokeListInteractor: PokeListInteractorProtocol {
-
+    
     let service = Service()
     var presenter: PokeListPresenterProtocol?
     
-    func fetchPokeList(from url: String) async {
+    func fetchPokeList(from url: String) {
         
-        do {
-            let response = try await self.service.getOperation(from: url)
+        self.service.getOperation(from: url, completion: { (data, error) in
             
-            if let data = response as? Data {
-                let pokemonList = try JSONDecoder().decode(PokemonListResponse.self, from: data)
-                self.presenter?.interactorDidFetchPokeList(with: .success(pokemonList))
+            if let data = data as? Data, error == nil {
+                
+                do {
+                    let pokemonList = try JSONDecoder().decode(PokemonListResponse.self, from: data)
+                    self.presenter?.interactorDidFetchPokeList(with: .success(pokemonList))
+                }
+                catch {
+                    self.presenter?.interactorDidFetchPokeList(with: .failure(error))
+                }
+                
             }
-        }
-        catch {
-            self.presenter?.interactorDidFetchPokeList(with: .failure(error))
-        }
+            else {
+                self.presenter?.interactorDidFetchPokeList(with: .failure(error!))
+            }
+        })
     }
 }

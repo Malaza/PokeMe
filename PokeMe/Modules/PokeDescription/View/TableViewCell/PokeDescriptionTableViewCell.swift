@@ -54,6 +54,7 @@ class PokeDescriptionTableViewCell: UITableViewCell {
     
     //MARK: - Lifecycle
     func configureWithModel(model: PokemonModel) {
+        self.pokeimageView.loadImage(url: model.spriteUrl ?? "")
         self.attributeZero.attributedText = self.attributedStringForTitle(title: "Name", subTitle: model.name?.capitalized)
         self.attributeOne.attributedText = self.attributedStringForTitle(title: "Order", subTitle: model.order)
         self.attributeTwo.attributedText = self.attributedStringForTitle(title: "Height", subTitle: model.height)

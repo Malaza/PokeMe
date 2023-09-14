@@ -13,32 +13,39 @@ class PokeDescriptionInteractor: PokeDescriptionInteractorProtocol {
     private let imageCache = ImageCache()
     var presenter: PokeDescriptionPresenterProtocol?
     
-    func fetchPokeDescription(from url: String?) async {
+    func fetchPokeDescription(from url: String) {
         
-        do {
-            let response = try await self.service.getOperation(from: url ?? "")
+        self.service.getOperation(from: url, completion: { (data, error) in
             
-            if let data = response as? Data {
-                let pokemonDescription = try JSONDecoder().decode(PokemonResponse.self, from: data)
-                self.presenter?.interactorDidFetchPokeDescription(with: .success(pokemonDescription))
+            if let data = data as? Data, error == nil {
+                
+                do {
+                    let pokemonList = try JSONDecoder().decode(PokemonResponse.self, from: data)
+                    self.presenter?.interactorDidFetchPokeDescription(with: .success(pokemonList))
+                }
+                catch {
+                    self.presenter?.interactorDidFetchPokeDescription(with: .failure(error))
+                }
             }
-        }
-        catch {
-            self.presenter?.interactorDidFetchPokeDescription(with: .failure(error))
-        }
+            else {
+                self.presenter?.interactorDidFetchPokeDescription(with: .failure(error!))
+            }
+        })
     }
     
-    func fetchImage(from url: URL) async throws -> UIImage {
-        
-        if let cachedImage = imageCache.image(for: url) {
-            return cachedImage
-        }
-        
-        let data = try await service.downloadImageData(from: url)
-        guard let image = UIImage(data: data) else {
-            throw NSError(domain: "InvalidImageData", code: 0, userInfo: nil)
-        }
-        imageCache.cacheImage(image, for: url)
-        return image
-    }
+//    func fetchImage(from url: URL) async throws -> UIImage {
+//        
+//        if let cachedImage = imageCache.image(for: url) {
+//            return cachedImage
+//        }
+//        
+//        service.downloadImageData(from: url, completion: { data, error in
+//            
+//            let imageData = data as! Data
+//            if let image = UIImage(data: imageData) {
+//                imageCache.cacheImage(image, for: url)
+//                return image
+//            }
+//        })
+//    }
 }

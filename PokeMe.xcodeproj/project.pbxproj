@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		594257682AB332E50065E43D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594257672AB332E50065E43D /* UIImageView.swift */; };
 		59ADD6CC2AB245AE0071AE9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADD6CB2AB245AE0071AE9B /* ImageCache.swift */; };
 		59FDE2DB2AAC39CC00A132CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2DA2AAC39CC00A132CA /* AppDelegate.swift */; };
 		59FDE2DD2AAC39CC00A132CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2DC2AAC39CC00A132CA /* SceneDelegate.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		594257672AB332E50065E43D /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		59ADD6CB2AB245AE0071AE9B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		59FDE2D72AAC39CC00A132CA /* PokeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FDE2DA2AAC39CC00A132CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				59FDE31C2AACA67000A132CA /* UIViewController.swift */,
+				594257672AB332E50065E43D /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				59FDE3432AAD8BE400A132CA /* PokeDescriptionInteractor.swift in Sources */,
 				59FDE3472AAD8C0800A132CA /* PokeDescriptionPresenter.swift in Sources */,
 				59FDE3112AACA4D700A132CA /* Service.swift in Sources */,
+				594257682AB332E50065E43D /* UIImageView.swift in Sources */,
 				59FDE3132AACA4EA00A132CA /* ServiceProtocol.swift in Sources */,
 				59FDE32B2AAD875400A132CA /* PokeListRouterProtocol.swift in Sources */,
 				59FDE34B2AAD8C3B00A132CA /* PokeDescriptionRouter.swift in Sources */,

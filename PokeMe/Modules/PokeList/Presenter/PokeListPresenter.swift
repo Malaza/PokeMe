@@ -22,8 +22,8 @@ class PokeListPresenter: PokeListPresenterProtocol {
         self.router = router
     }
     
-    func fetchPokeList(from url: String) async {
-        await self.interactor?.fetchPokeList(from: url)
+    func fetchPokeList(from url: String) {
+        self.interactor?.fetchPokeList(from: url)
     }
     
     func interactorDidFetchPokeList(with result: Result<PokemonListResponse, Error>) {

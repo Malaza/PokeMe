@@ -17,16 +17,13 @@ class PokeListViewController: UIViewController {
     let url = "https://pokeapi.co/api/v2/pokemon/?limit=100"
     
     
-    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     
-    //MARK: - Variables
     var presenter: PokeListPresenterProtocol?
     
     
-    //MARK: - Setup
     private func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -40,7 +37,6 @@ class PokeListViewController: UIViewController {
     }
     
     
-    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "PokeMe"
@@ -49,17 +45,13 @@ class PokeListViewController: UIViewController {
     }
     
     func fetchPokeList() {
-        Task.init {
-            self.showLoadingView()
-            await self.presenter?.fetchPokeList(from: self.url)
-        }
+        self.showLoadingView()
+        self.presenter?.fetchPokeList(from: self.url)
     }
 }
 
 
 extension PokeListViewController: PokeListViewProtocol {
-    
-    
     
     func showData() {
         DispatchQueue.main.async {

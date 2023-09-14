@@ -10,29 +10,32 @@ import Alamofire
 
 class Service: ServiceProtocol {
     
-    func getOperation(from url: String) async throws -> Any {
+    func getOperation(from url: String, completion: @escaping ServiceCompletion) {
         
-        return try await withCheckedThrowingContinuation { continuation in
-            Session.default.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil)
-                .response { response in
-                    
-                    switch response.result {
-                    case .success(let data):
-                        guard let result = data else {
-                            fatalError("Expected non-nil result in the non-error case")
-                        }
-                        continuation.resume(returning: result)
-                    case .failure(let error):
-                        continuation.resume(throwing: error)
-                    }
-                }
+        Session.default.request(url, method: .get, parameters: nil, encoding: URLEncoding.default,
+                                headers: nil, interceptor: nil).response { response in
+                
+            switch response.result {
+            case .success(let data):
+                completion(data, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
         }
     }
     
-    func downloadImageData(from url: URL) async throws -> Data {
-        let request = URLRequest(url: url)
-        let (data, _) = try await URLSession.shared.data(for: request)
-        return data
+    public static func downloadImageData(from url: URL, completion: @escaping ServiceCompletion) {
+        
+        Session.default.request(url, method: .get, parameters: nil, encoding: URLEncoding.default,
+                                headers: nil, interceptor: nil).response { response in
+                
+            switch response.result {
+            case .success(let data):
+                completion(data, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
     }
     
 }
