@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		594257682AB332E50065E43D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594257672AB332E50065E43D /* UIImageView.swift */; };
-		59ADD6CC2AB245AE0071AE9B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADD6CB2AB245AE0071AE9B /* ImageCache.swift */; };
 		59FDE2DB2AAC39CC00A132CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2DA2AAC39CC00A132CA /* AppDelegate.swift */; };
 		59FDE2DD2AAC39CC00A132CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDE2DC2AAC39CC00A132CA /* SceneDelegate.swift */; };
 		59FDE2E22AAC39CC00A132CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FDE2E02AAC39CC00A132CA /* Main.storyboard */; };
@@ -69,7 +68,6 @@
 
 /* Begin PBXFileReference section */
 		594257672AB332E50065E43D /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		59ADD6CB2AB245AE0071AE9B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		59FDE2D72AAC39CC00A132CA /* PokeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FDE2DA2AAC39CC00A132CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59FDE2DC2AAC39CC00A132CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 			children = (
 				59FDE3122AACA4EA00A132CA /* ServiceProtocol.swift */,
 				59FDE3102AACA4D700A132CA /* Service.swift */,
-				59ADD6CB2AB245AE0071AE9B /* ImageCache.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -559,7 +556,6 @@
 				59FDE3352AAD87D000A132CA /* PokeListInteractor.swift in Sources */,
 				59FDE35F2AAE4D3200A132CA /* PokeListItemTableViewCell.swift in Sources */,
 				59FDE3332AAD87BD00A132CA /* PokeListInteractorProtocol.swift in Sources */,
-				59ADD6CC2AB245AE0071AE9B /* ImageCache.swift in Sources */,
 				59FE845D2AAF396200A45E26 /* PokeDescriptionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
