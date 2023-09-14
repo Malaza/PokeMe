@@ -11,6 +11,6 @@ import Alamofire
 typealias ServiceCompletion = (Any?, AFError?) -> Void
 
 protocol ServiceProtocol {
-    func getOperation() async throws -> Any
-    static func executeImageDownload(url: URL, completion: @escaping ServiceCompletion)
+    func getOperation(from url: String) async throws -> Any
+    func downloadImageData(from url: URL) async throws -> Data
 }

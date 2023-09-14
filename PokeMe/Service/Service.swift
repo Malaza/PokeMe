@@ -10,10 +10,10 @@ import Alamofire
 
 class Service: ServiceProtocol {
     
-    func getOperation() async throws -> Any {
+    func getOperation(from url: String) async throws -> Any {
         
         return try await withCheckedThrowingContinuation { continuation in
-            Session.default.request("https://pokeapi.co/api/v2/pokemon/?limit=100", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil)
+            Session.default.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil)
                 .response { response in
                     
                     switch response.result {
@@ -29,21 +29,10 @@ class Service: ServiceProtocol {
         }
     }
     
-    
-    public static func executeImageDownload(url: URL, completion: @escaping ServiceCompletion) {
-        
-        let request = NSMutableURLRequest(url: url,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        
-        let dataTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            
-            guard let data = data, error == nil else {
-                completion(nil, error?.asAFError)
-                return
-            }
-            completion(data, nil)
-        })
-        dataTask.resume()
+    func downloadImageData(from url: URL) async throws -> Data {
+        let request = URLRequest(url: url)
+        let (data, _) = try await URLSession.shared.data(for: request)
+        return data
     }
+    
 }
