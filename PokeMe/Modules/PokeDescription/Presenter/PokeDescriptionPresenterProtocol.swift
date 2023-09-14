@@ -13,7 +13,8 @@ protocol PokeDescriptionPresenterProtocol {
     var interactor: PokeDescriptionInteractorProtocol? { get set }
     
     //MARK: - Input
-    func fetchPokeDescription() async
+    func fetchPokeDescription(from url: String?) async
+    func fetchImage(from url: URL) async -> UIImage?
     
     
     //MARK: - Output

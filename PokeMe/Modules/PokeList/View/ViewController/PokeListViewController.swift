@@ -8,13 +8,15 @@
 import UIKit
 
 protocol PokeListViewProtocol {
-    func fetchPokeList()
     func showData()
 }
 
 
 class PokeListViewController: UIViewController {
 
+    let url = "https://pokeapi.co/api/v2/pokemon/?limit=100"
+    
+    
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -45,17 +47,19 @@ class PokeListViewController: UIViewController {
         self.setupTableView()
         self.fetchPokeList()
     }
+    
+    func fetchPokeList() {
+        Task.init {
+            self.showLoadingView()
+            await self.presenter?.fetchPokeList(from: self.url)
+        }
+    }
 }
 
 
 extension PokeListViewController: PokeListViewProtocol {
     
-    func fetchPokeList() {
-        Task.init {
-            self.showLoadingView()
-            await self.presenter?.fetchPokeList()
-        }
-    }
+    
     
     func showData() {
         DispatchQueue.main.async {

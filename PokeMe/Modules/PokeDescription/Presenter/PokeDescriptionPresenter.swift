@@ -21,8 +21,17 @@ class PokeDescriptionPresenter: PokeDescriptionPresenterProtocol {
         self.router = router
     }
     
-    func fetchPokeDescription() async {
-        await self.interactor?.fetchPokeDescription()
+    func fetchPokeDescription(from url: String?) async {
+        await self.interactor?.fetchPokeDescription(from: url)
+    }
+    
+    func fetchImage(from url: URL) async -> UIImage? {
+        do {
+            return try await self.interactor?.fetchImage(from: url)
+        }
+        catch {
+            return nil
+        }
     }
     
     func pokemonObject() -> PokemonModel? {

@@ -8,7 +8,6 @@
 import UIKit
 
 protocol PokeDescriptionViewProtocol {
-    func fetchPokeDescription()
     func showData()
 }
 
@@ -21,6 +20,7 @@ class PokeDescriptionViewController: UIViewController {
     //MARK: - Variables
     var presenter: PokeDescriptionPresenterProtocol?
     var url: String?
+    
     
     private func setupTableView() {
         self.tableView.delegate = self
@@ -50,19 +50,25 @@ class PokeDescriptionViewController: UIViewController {
         super.viewDidLoad()
         self.title = self.presenter?.pokemonObject()?.name?.capitalized
         self.setupTableView()
-        self.fetchPokeDescription()
+        self.fetchPokeDescription(url: self.url)
+    }
+    
+    func fetchPokeDescription(url: String?) {
+        Task {
+            self.showLoadingView()
+            await self.presenter?.fetchPokeDescription(from: url)
+        }
+    }
+    
+    func fetchImage(from url: URL) {
+        Task {
+            let image = await self.presenter?.fetchImage(from: url)
+        }
     }
 }
 
 
 extension PokeDescriptionViewController: PokeDescriptionViewProtocol {
-    
-    func fetchPokeDescription() {
-        Task.init {
-            self.showLoadingView()
-            await self.presenter?.fetchPokeDescription()
-        }
-    }
     
     func showData() {
         DispatchQueue.main.async {

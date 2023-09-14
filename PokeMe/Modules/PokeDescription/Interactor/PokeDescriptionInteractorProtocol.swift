@@ -10,5 +10,6 @@ import UIKit
 protocol PokeDescriptionInteractorProtocol {
     var presenter: PokeDescriptionPresenterProtocol? { get set }
     
-    func fetchPokeDescription() async
+    func fetchPokeDescription(from url: String?) async
+    func fetchImage(from url: URL) async throws -> UIImage
 }
