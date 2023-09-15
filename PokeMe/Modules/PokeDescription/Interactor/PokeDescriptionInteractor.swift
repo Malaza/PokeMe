@@ -9,7 +9,7 @@ import UIKit
 
 class PokeDescriptionInteractor: PokeDescriptionInteractorProtocol {
 
-    private let service = Service()
+    let service = Service()
     var presenter: PokeDescriptionPresenterProtocol?
     
     func fetchPokeDescription(from url: String) {
