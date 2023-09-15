@@ -46,11 +46,6 @@ class PokeListPresenter: PokeListPresenterProtocol {
         return self.pokemonList?.count ?? 0
     }
     
-    func searchWithQuery(query: String) {
-        self.pokemonList = self.pokemonList?.filter({ $0.name?.range(of: query, options: .caseInsensitive) != nil })
-        self.view?.showData()
-    }
-    
     private func transformToModelList(response: [PokemonItemResponse]?) -> [PokemonItemModel] {
         
         var array = [PokemonItemModel]()

@@ -16,20 +16,30 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBj-fm-m87">
-                        <rect key="frame" x="20" y="20" width="280" height="102"/>
+                        <rect key="frame" x="75" y="20" width="225" height="102"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3vC-Jv-ztP">
+                        <rect key="frame" x="20" y="51" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="doI-zT-L4e"/>
+                            <constraint firstAttribute="height" constant="40" id="ypj-gZ-IsV"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="vBj-fm-m87" secondAttribute="trailing" constant="20" id="IW0-xE-FlP"/>
+                    <constraint firstItem="3vC-Jv-ztP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LbQ-JO-PAe"/>
+                    <constraint firstItem="vBj-fm-m87" firstAttribute="leading" secondItem="3vC-Jv-ztP" secondAttribute="trailing" constant="15" id="UVB-e1-Oh5"/>
                     <constraint firstItem="vBj-fm-m87" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="jUw-Sm-pxz"/>
                     <constraint firstAttribute="bottom" secondItem="vBj-fm-m87" secondAttribute="bottom" constant="20" id="tRK-QS-C1O"/>
-                    <constraint firstItem="vBj-fm-m87" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="yks-Xl-fkj"/>
+                    <constraint firstItem="3vC-Jv-ztP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xvv-dm-7Fc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="thumbnailImageView" destination="3vC-Jv-ztP" id="30r-Ys-pL7"/>
                 <outlet property="titleLabel" destination="vBj-fm-m87" id="kfe-mU-KGt"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="54.929577464788736"/>

@@ -16,20 +16,12 @@ class PokeDescriptionViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var pokemonDescriptionView: PokemonDescriptionView!
+    
     
     var presenter: PokeDescriptionPresenterProtocol?
     var url: String?
-    
-    
-    private func setupTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.separatorColor = .clear
-        self.tableView.estimatedRowHeight = 400
-        self.tableView.register(UINib(nibName: PokeDescriptionTableViewCell.identifier, bundle: nil),
-                                forCellReuseIdentifier: PokeDescriptionTableViewCell.identifier)
-    }
-    
+
     
     convenience init(url: String?) {
         self.init()
@@ -46,8 +38,7 @@ class PokeDescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = self.presenter?.pokemonObject()?.name?.capitalized
-        self.setupTableView()
+        self.title = "PokeMe"
         self.fetchPokeDescription(url: self.url ?? "")
     }
     
@@ -63,27 +54,11 @@ extension PokeDescriptionViewController: PokeDescriptionViewProtocol {
     
     func showData() {
         DispatchQueue.main.async {
-            self.hideLoadingView()
-            self.tableView.reloadData()
-        }
-    }
-}
-
-
-extension PokeDescriptionViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: PokeDescriptionTableViewCell.identifier) as? PokeDescriptionTableViewCell {
             if let model = self.presenter?.pokemonObject() {
-                cell.configureWithModel(model: model)
-                return cell
+                self.pokemonDescriptionView.configureDescriptionView(model: model)
             }
+            self.hideLoadingView()
         }
-        return UITableViewCell()
     }
 }
+

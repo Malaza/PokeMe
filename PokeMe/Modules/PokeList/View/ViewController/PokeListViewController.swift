@@ -13,12 +13,8 @@ protocol PokeListViewProtocol {
 
 
 class PokeListViewController: UIViewController {
-
-    let url = "https://pokeapi.co/api/v2/pokemon/?limit=100"
-    
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     
     var presenter: PokeListPresenterProtocol?
@@ -32,10 +28,6 @@ class PokeListViewController: UIViewController {
                                 forCellReuseIdentifier: PokeListItemTableViewCell.identifier)
     }
     
-    private func setupSearchBar() {
-        self.searchBar.delegate = self
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +38,7 @@ class PokeListViewController: UIViewController {
     
     func fetchPokeList() {
         self.showLoadingView()
-        self.presenter?.fetchPokeList(from: self.url)
+        self.presenter?.fetchPokeList(from: Constants.url)
     }
 }
 
@@ -72,7 +64,7 @@ extension PokeListViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: PokeListItemTableViewCell.identifier) as? PokeListItemTableViewCell {
             if let model = self.presenter?.pokemonAtIndex(index: indexPath.row) {
-                cell.configureWith(model: model)
+                cell.configureWith(model: model, index: indexPath.row + 1)
                 return cell
             }
         }
@@ -83,17 +75,6 @@ extension PokeListViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let model = self.presenter?.pokemonAtIndex(index: indexPath.row) {
             self.presenter?.router?.presentPokeDescriptionViewController(with: model.url ?? "")
-        }
-    }
-}
-
-
-extension PokeListViewController: UISearchBarDelegate {
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if searchText.count > 2 {
-            self.presenter?.searchWithQuery(query: searchText)
         }
     }
 }

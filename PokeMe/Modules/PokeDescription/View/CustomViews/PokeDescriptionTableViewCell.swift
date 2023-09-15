@@ -18,6 +18,7 @@ class PokeDescriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var attributeZero: UILabel! {
         didSet {
             attributeZero.numberOfLines = 0
+            attributeZero.font = UIFont.systemFont(ofSize: 30)
         }
     }
     
@@ -55,7 +56,7 @@ class PokeDescriptionTableViewCell: UITableViewCell {
     //MARK: - Lifecycle
     func configureWithModel(model: PokemonModel) {
         self.pokeimageView.loadImage(url: model.spriteUrl ?? "")
-        self.attributeZero.attributedText = self.attributedStringForTitle(title: "Name", subTitle: model.name?.capitalized)
+        self.attributeZero.text = model.name?.capitalized
         self.attributeOne.attributedText = self.attributedStringForTitle(title: "Order", subTitle: model.order)
         self.attributeTwo.attributedText = self.attributedStringForTitle(title: "Height", subTitle: model.height)
         self.attributeThree.attributedText = self.attributedStringForTitle(title: "weight", subTitle: model.weight)

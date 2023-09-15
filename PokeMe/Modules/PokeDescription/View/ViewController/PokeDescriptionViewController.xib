@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokeDescriptionViewController" customModule="PokeMe" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="gEC-Hp-fAg" id="8Fu-mZ-Zg3"/>
+                <outlet property="pokemonDescriptionView" destination="4c7-VX-9j8" id="lmL-09-OgJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +19,22 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-Hp-fAg">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4c7-VX-9j8" customClass="PokemonDescriptionView" customModule="PokeMe" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="600"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="600" id="zuQ-b1-FDF"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gEC-Hp-fAg" secondAttribute="bottom" id="LZB-lB-VSM"/>
-                <constraint firstItem="gEC-Hp-fAg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fyN-Sm-ygA"/>
-                <constraint firstItem="gEC-Hp-fAg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="i1L-og-RWc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gEC-Hp-fAg" secondAttribute="trailing" id="n83-Fs-0TP"/>
+                <constraint firstItem="4c7-VX-9j8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FPS-OW-hqM"/>
+                <constraint firstItem="4c7-VX-9j8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SEj-SJ-PXY"/>
+                <constraint firstAttribute="trailing" secondItem="4c7-VX-9j8" secondAttribute="trailing" id="x01-J9-1a2"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="21"/>
+            <point key="canvasLocation" x="138.1679389312977" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
