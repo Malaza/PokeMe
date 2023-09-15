@@ -12,9 +12,6 @@ protocol PokeDescriptionViewProtocol {
 }
 
 class PokeDescriptionViewController: UIViewController {
-
-    
-    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var pokemonDescriptionView: PokemonDescriptionView!
     

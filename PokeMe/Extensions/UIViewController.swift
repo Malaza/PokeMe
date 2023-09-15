@@ -15,7 +15,7 @@ extension UIViewController {
     
     //MARK: - Loading view
     func showLoadingView() {
-        animationView = .init(name: "pokemon")
+        animationView = .init(name: "loading")
         animationView?.backgroundColor = .white
         animationView!.frame = self.view.bounds
         animationView!.contentMode = .scaleAspectFit

@@ -11,8 +11,6 @@ class PokemonDescriptionView: UIView {
     
     let identifier = "PokemonDescriptionView"
     
-    
-    //MARK: - Outlets
     @IBOutlet weak var pokeimageView: UIImageView!
     
     @IBOutlet weak var attributeOne: UILabel! {
@@ -47,11 +45,9 @@ class PokemonDescriptionView: UIView {
     }
     
     
-    //MARK: - Variables
     var contentView: UIView?
 
     
-    //MARK: - Lifecycle
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         guard let view = loadViewFromNib() else { return }
@@ -75,8 +71,6 @@ class PokemonDescriptionView: UIView {
         self.attributeFive.attributedText = self.attributedStringForTitle(title: "Base Experience", subTitle: model.baseExperience)
     }
     
-    
-    //MARK: - Helper methods
     func attributedStringForTitle(title:String, subTitle:String?) -> NSAttributedString {
 
         let attrHeading:NSMutableAttributedString

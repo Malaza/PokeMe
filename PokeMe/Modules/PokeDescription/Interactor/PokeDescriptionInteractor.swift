@@ -17,7 +17,6 @@ class PokeDescriptionInteractor: PokeDescriptionInteractorProtocol {
         self.service.getOperation(from: url, completion: { (data, error) in
             
             if let data = data as? Data, error == nil {
-                
                 do {
                     let pokemonList = try JSONDecoder().decode(PokemonResponse.self, from: data)
                     self.presenter?.interactorDidFetchPokeDescription(with: .success(pokemonList))

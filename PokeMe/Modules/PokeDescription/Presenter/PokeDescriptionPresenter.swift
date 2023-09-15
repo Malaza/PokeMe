@@ -37,7 +37,7 @@ class PokeDescriptionPresenter: PokeDescriptionPresenterProtocol {
             self.view?.showData()
             case .failure(let error):
             print(error)
-//            self.view?.showErrorMessage(message: error.localizedDescription)
+            self.view?.showErrorMessage(message: error.localizedDescription)
         }
     }
     

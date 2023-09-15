@@ -64,7 +64,7 @@ extension PokeListViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: PokeListItemTableViewCell.identifier) as? PokeListItemTableViewCell {
             if let model = self.presenter?.pokemonAtIndex(index: indexPath.row) {
-                cell.configureWith(model: model, index: indexPath.row + 1)
+                cell.configureWith(model: model, index: indexPath.row + 1) //Zero index array, so we add 1 to align with api response
                 return cell
             }
         }
