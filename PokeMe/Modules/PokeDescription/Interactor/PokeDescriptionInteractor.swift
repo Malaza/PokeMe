@@ -5,7 +5,7 @@
 //  Created by Mthokozisi Malaza on 2023/09/10.
 //
 
-import UIKit
+import Foundation
 
 class PokeDescriptionInteractor: PokeDescriptionInteractorProtocol {
 

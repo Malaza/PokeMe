@@ -5,7 +5,7 @@
 //  Created by Mthokozisi Malaza on 2023/09/10.
 //
 
-import UIKit
+import Foundation
 import Alamofire
 
 class PokeListInteractor: PokeListInteractorProtocol {
@@ -26,7 +26,6 @@ class PokeListInteractor: PokeListInteractorProtocol {
                 catch {
                     self.presenter?.interactorDidFetchPokeList(with: .failure(error))
                 }
-                
             }
             else {
                 self.presenter?.interactorDidFetchPokeList(with: .failure(error!))
